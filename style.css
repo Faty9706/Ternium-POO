@@ -1,0 +1,246 @@
+*{
+  box-sizing:border-box;
+}
+
+ body{
+  margin:0;
+  font-family: 'Segoe UI', sans-serif;
+
+  background-image: url("img/fondo.jpg");
+  background-size: cover;        /* que cubra toda la pantalla */
+  background-position: center;   /* centrada */
+  background-repeat: no-repeat;
+  background-attachment: fixed;  /* efecto pro */
+}
+body::before{
+  content:"";
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+
+  background: rgba(0, 0, 0, 0.17); /* oscuridad */
+  z-index:-1;
+}
+
+/* LOGIN PRO */
+.login{
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  background:linear-gradient(rgba(0, 0, 0, 0.137),rgba(0,0,0,.8)),
+  url("img/acero.jpg");
+  background-size:cover;
+}
+
+.login h1{
+  font-size:45px;
+}
+
+.login input{
+  padding:12px;
+  margin:10px;
+  border-radius:6px;
+  border:none;
+  width:250px;
+}
+
+.login button{
+  padding:12px 25px;
+  background:#ff6a00;
+  border:none;
+  color:white;
+  font-size:18px;
+  border-radius:6px;
+  cursor:pointer;
+}
+
+/* HERO INDUSTRIAL */
+.hero{
+  height:260px;
+  background:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.7)),
+  url("img/acero.jpg");
+  background-size:cover;
+  display:flex;
+  align-items:center;
+  padding-left:60px;
+  border-radius:20px;
+  margin-bottom:30px;
+}
+
+.heroText h1{
+  font-size:38px;
+  margin:0;
+}
+.heroText p{
+  opacity:.8;
+}
+
+/* HAMBURGUESA */
+.menuBtn{
+  position:fixed;
+  top:15px;
+  left:15px;
+  font-size:32px;
+  cursor:pointer;
+  z-index:100;
+}
+
+/* SIDEBAR PRO */
+.sidebar{
+  position:fixed;
+  left:0;
+  top:0;
+  height:100%;
+  width:260px;
+  background:rgba(15,23,42,.95);
+  backdrop-filter:blur(10px);
+  padding:20px;
+  transition:.3s;
+}
+
+.sidebar h2{
+  margin-top: 60px;   /* 👈 esto lo baja */
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.sidebar button{
+  width:100%;
+  padding:12px;
+  margin:8px 0;
+  border:none;
+  background:transparent;
+  color:white;
+  font-size:16px;
+  text-align:left;
+  cursor:pointer;
+  border-radius:8px;
+}
+
+.sidebar button:hover{
+  background:#ff6a00;
+}
+
+/* MODULOS */
+.modulo{
+  margin-left:280px;
+  padding:30px;
+}
+
+.hidden{
+  display:none;
+}
+
+/* CARDS PRO */
+.cards{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(220px, 1fr));
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.card{
+  padding:15px;
+  border-radius:15px;
+
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+
+  width:100%;      /* 🔴 ESTO evita que se rompa el grid */
+}
+.card h3{
+  font-size:35px;
+  color:#ff6a00;
+  margin:0;
+}
+
+/* FORMULARIOS */
+input, textarea{
+  width:100%;
+  padding:12px;
+  margin:10px 0;
+  border-radius:8px;
+  border:none;
+}
+
+textarea{
+  height:120px;
+}
+
+button{
+  padding:12px 25px;
+  background:#ff6a00;
+  border:none;
+  color:white;
+  font-size:16px;
+  border-radius:8px;
+  cursor:pointer;
+}
+
+/* TABLAS PRO */
+table{
+  width:100%;
+  border-collapse:collapse;
+  background:rgba(255,255,255,.08);
+  backdrop-filter:blur(10px);
+  border-radius:12px;
+  overflow:hidden;
+}
+
+th{
+  background:#ff6a00;
+  padding:12px;
+}
+
+td{
+  padding:12px;
+  border-bottom:1px solid rgba(255,255,255,.1);
+}
+.big{
+  font-size: 35px;
+  font-weight: bold;
+  color: #00A3E0;
+}
+.card-large{
+  grid-column: span 2;
+}
+.logo{
+  margin-top:70px;     /* espacio debajo de la hamburguesa */
+  padding:20px 10px;
+  text-align:center;
+}
+.logo img{
+  width:160px;
+}
+.logout{
+  margin-top:40px;
+  color:#ffb3b3;
+}
+
+.logout:hover{
+  background:#ff4d4d;
+  color:white;
+}
+.login-title{
+  font-size: 38px;      /* cámbialo al tamaño que quieras */
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: white;
+  text-align: center;
+}
+.login-logo{
+  width: 300px;     /* tamaño del logo */
+  margin-bottom: 10px;
+}
+.login-subtitle{
+  font-size: 25px;      /* cámbialo al tamaño que quieras */
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: white;
+}
