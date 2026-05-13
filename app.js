@@ -229,3 +229,80 @@ function cerrarSesion(){
       location.reload();
    }
 }
+function guardarIncidencia(){
+
+  const usuario = JSON.parse(localStorage.getItem("usuarioActivo"));
+
+  if(!usuario){
+    alert("No hay sesión activa");
+    return;
+  }
+
+  const maquina = document.getElementById("maquina").value;
+  const fecha = document.getElementById("fecha").value;
+  const descripcion = document.getElementById("descripcion").value;
+
+  if(!maquina || !fecha || !descripcion){
+    alert("Completa todos los campos");
+    return;
+  }
+
+  const nueva = {
+    id: Date.now(),
+    maquina,
+    fecha,
+    descripcion,
+    usuario: usuario.nombre
+  };
+
+  let incidencias = JSON.parse(localStorage.getItem("incidencias")) || [];
+
+  incidencias.push(nueva);
+
+  localStorage.setItem("incidencias", JSON.stringify(incidencias));
+
+  alert("Incidencia guardada ✅");
+
+  // 🔥 IMPORTANTÍSIMO: refrescar vista
+  mostrarTablaIncidencias();
+  actualizarDashboard();
+}
+function guardarMantenimiento(){
+
+  const usuario = JSON.parse(localStorage.getItem("usuarioActivo"));
+
+  if(!usuario){
+    alert("No hay sesión activa");
+    return;
+  }
+
+  const maquina = document.getElementById("maqMant").value;
+  const tipo = document.getElementById("tipoMant").value;
+  const fecha = document.getElementById("fechaMant").value;
+  const descripcion = document.getElementById("descMant").value;
+
+  if(!maquina || !tipo || !fecha || !descripcion){
+    alert("Completa todos los campos");
+    return;
+  }
+
+  const nuevo = {
+    id: Date.now(),
+    maquina,
+    tipo,
+    fecha,
+    descripcion,
+    usuario: usuario.nombre
+  };
+
+  let mantenimientos = JSON.parse(localStorage.getItem("mantenimientos")) || [];
+
+  mantenimientos.push(nuevo);
+
+  localStorage.setItem("mantenimientos", JSON.stringify(mantenimientos));
+
+  alert("Mantenimiento guardado ✅");
+
+  mostrarTablaMantenimiento();
+  actualizarDashboard();
+}
