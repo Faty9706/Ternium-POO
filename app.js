@@ -24,16 +24,26 @@ function mostrar(id){
 function guardarIncidencia(){
   const usuario = JSON.parse(localStorage.getItem("usuarioActivo"));
 
-const nuevaIncidencia = {
-  id: Date.now(),
-  maquina,
-  descripcion,
-  tipo,
-  area,
-  fecha: new Date().toLocaleDateString(),
-  responsable: usuario.nombre,
-  correoResponsable: usuario.correo
-};
+  const maquina = document.getElementById("maquina").value;
+  const descripcion = document.getElementById("descripcion").value;
+  const tipo = document.getElementById("tipo").value;
+  const area = document.getElementById("area").value;
+
+  const nuevaIncidencia = {
+    id: Date.now(),
+    maquina,
+    descripcion,
+    tipo,
+    area,
+    fecha: new Date().toLocaleDateString(),
+    responsable: usuario.nombre,
+    correoResponsable: usuario.correo
+  };
+
+  let incidencias = JSON.parse(localStorage.getItem("incidencias")) || [];
+  incidencias.push(nuevaIncidencia);
+
+  localStorage.setItem("incidencias", JSON.stringify(incidencias));
 }
 
 function mostrarTablaIncidencias(){
@@ -51,16 +61,24 @@ function mostrarTablaIncidencias(){
 }
 
 /* MANTENIMIENTOS */
-function guardarMantenimiento() {
+function guardarMantenimiento(){
   const usuario = JSON.parse(localStorage.getItem("usuarioActivo"));
 
-const nuevoMantenimiento = {
-  id: Date.now(),
-  maquina,
-  descripcion,
-  fecha: new Date().toLocaleDateString(),
-  responsable: usuario.nombre
-};
+  const maquina = document.getElementById("maquinaM").value;
+  const descripcion = document.getElementById("descripcionM").value;
+
+  const nuevoMantenimiento = {
+    id: Date.now(),
+    maquina,
+    descripcion,
+    fecha: new Date().toLocaleDateString(),
+    responsable: usuario.nombre
+  };
+
+  let mantenimientos = JSON.parse(localStorage.getItem("mantenimientos")) || [];
+  mantenimientos.push(nuevoMantenimiento);
+
+  localStorage.setItem("mantenimientos", JSON.stringify(mantenimientos));
 }
 
 function mostrarTablaMantenimiento(){
