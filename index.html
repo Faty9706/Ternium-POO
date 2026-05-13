@@ -5,6 +5,7 @@
 <title>Ternium - Sistema de Mantenimiento</title>
 <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
 <!-- LOGIN -->
@@ -14,6 +15,7 @@
   <h1 class="login-title">Sistema de incidencias industriales</h1>
 
   <div class="loginBox">
+
     <h2 class="login-subtitle">Iniciar sesión</h2>
     <input id="correoLogin" placeholder="Correo empresarial">
     <input id="passLogin" type="password" placeholder="Contraseña">
@@ -25,46 +27,54 @@
     <input id="nombreReg" placeholder="Nombre completo">
     <input id="correoReg" placeholder="Correo empresarial">
     <input id="passReg" type="password" placeholder="Contraseña">
+
     <select id="rolReg">
       <option>Ingeniero</option>
       <option>Lider</option>
       <option>Administrador</option>
     </select>
-    <button onclick="registrar()">Crear cuenta</button>
-  </div>
 
+    <button onclick="registrar()">Crear cuenta</button>
+
+  </div>
 </div>
 
-<!-- BOTON HAMBURGUESA -->
+<!-- BOTÓN HAMBURGUESA -->
 <div id="menuBtn" class="menuBtn hidden" onclick="toggleMenu()">☰</div>
 
 <!-- SIDEBAR -->
 <div id="sidebar" class="sidebar hidden">
+
   <div class="logo">
-   <img src="img/logo.png" alt="Ternium">
-</div>
+    <img src="img/logo.png" alt="Ternium">
+  </div>
+
   <button onclick="mostrar('dashboard')">Dashboard</button>
   <button onclick="mostrar('incidencia')">Registrar Incidencia</button>
   <button onclick="mostrarTablaIncidencias();mostrar('tablaInc')">Ver Incidencias</button>
   <button onclick="mostrar('mantenimiento')">Registrar Mantenimiento</button>
   <button onclick="mostrarTablaMantenimiento();mostrar('tablaMant')">Ver Mantenimientos</button>
+
   <li class="logout" onclick="cerrarSesion()">
-   ⬅ Cerrar sesión
-</li>
+    ⬅ Cerrar sesión
+  </li>
+
 </div>
 
 <!-- DASHBOARD -->
 <div id="dashboard" class="modulo hidden">
-    <div class="hero">
-  <div class="heroText">
-    <h1>Sistema de Gestión de Mantenimiento</h1>
-    <p>Ternium México – Área Industrial</p>
+
+  <div class="hero">
+    <div class="heroText">
+      <h1>Sistema de Gestión de Mantenimiento</h1>
+      <p>Ternium México – Área Industrial</p>
+    </div>
   </div>
-</div>
 
   <h1>Panel de Control</h1>
 
   <div class="cards">
+
     <div class="card">
       <h3 id="totalInc">0</h3>
       <p>Incidencias</p>
@@ -79,63 +89,72 @@
       <h3 id="usuarioActivoCard">-</h3>
       <p>Ingeniero activo</p>
     </div>
-  </div>
 
+  </div>
 </div>
 
 <!-- INCIDENCIAS -->
 <div id="incidencia" class="modulo hidden">
-<h2>Registrar Incidencia</h2>
-<input id="maquina" placeholder="Máquina">
-<input id="fecha" type="date">
-<textarea id="descripcion" placeholder="Descripción"></textarea>
-<button onclick="guardarIncidencia()">Guardar</button>
+  <h2>Registrar Incidencia</h2>
+
+  <input id="maquina" placeholder="Máquina">
+  <input id="fecha" type="date">
+  <textarea id="descripcion" placeholder="Descripción"></textarea>
+
+  <button onclick="guardarIncidencia()">Guardar</button>
 </div>
 
 <!-- TABLA INCIDENCIAS -->
 <div id="tablaInc" class="modulo hidden">
-<h2>Historial Incidencias</h2>
-<table>
-<thead>
-<tr>
-<th>Ingeniero</th>
-<th>Máquina</th>
-<th>Fecha</th>
-<th>Descripción</th>
-</tr>
-</thead>
-<tbody id="tablaIncidencias"></tbody>
-</table>
+  <h2>Historial Incidencias</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Ingeniero</th>
+        <th>Máquina</th>
+        <th>Fecha</th>
+        <th>Descripción</th>
+      </tr>
+    </thead>
+
+    <tbody id="tablaIncidencias"></tbody>
+  </table>
 </div>
 
 <!-- MANTENIMIENTOS -->
 <div id="mantenimiento" class="modulo hidden">
-<h2>Registrar Mantenimiento</h2>
-<input id="maqMant" placeholder="Máquina">
-<input id="tipoMant" placeholder="Tipo (Preventivo/Correctivo)">
-<input id="fechaMant" type="date">
-<textarea id="descMant" placeholder="Descripción"></textarea>
-<button onclick="guardarMantenimiento()">Guardar</button>
+  <h2>Registrar Mantenimiento</h2>
+
+  <input id="maqMant" placeholder="Máquina">
+  <input id="tipoMant" placeholder="Tipo (Preventivo/Correctivo)">
+  <input id="fechaMant" type="date">
+  <textarea id="descMant" placeholder="Descripción"></textarea>
+
+  <button onclick="guardarMantenimiento()">Guardar</button>
 </div>
 
 <!-- TABLA MANTENIMIENTOS -->
 <div id="tablaMant" class="modulo hidden">
-<h2>Historial Mantenimientos</h2>
-<table>
-<thead>
-<tr>
-<th>Ingeniero</th>
-<th>Máquina</th>
-<th>Tipo</th>
-<th>Fecha</th>
-<th>Descripción</th>
-</tr>
-</thead>
-<tbody id="tablaMantenimientos"></tbody>
-</table>
+  <h2>Historial Mantenimientos</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Ingeniero</th>
+        <th>Máquina</th>
+        <th>Tipo</th>
+        <th>Fecha</th>
+        <th>Descripción</th>
+      </tr>
+    </thead>
+
+    <tbody id="tablaMantenimientos"></tbody>
+  </table>
 </div>
 
+<!-- SOLO 1 SCRIPT -->
 <script src="app.js"></script>
-  <script src="app.js"></script>
+
 </body>
 </html>
